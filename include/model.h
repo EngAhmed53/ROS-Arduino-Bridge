@@ -1,15 +1,14 @@
-#ifndef ESP_HOVER_MODEL_H
-#define ESP_HOVER_MODEL_H
-
-#include <Arduino.h>
+#ifndef MODEL_H
+#define MODEL_H
 
 struct PIDModel {
     double proportional{0};
     double integral{0};
     double derivative{0};
+    double system_constrained_total{0};
+};
 
-    double total() const {
-        return proportional + integral - derivative;
-    }
+enum class DiffSide{
+    LEFT, RIGHT
 };
 #endif
